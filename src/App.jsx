@@ -65,9 +65,17 @@ export default function App() {
         <h1 className="text-4xl md:text-5xl font-extrabold text-md-blue-light">Bienvenido a MarketDigital</h1>
         <p className="text-md-blue-pastel mt-4 text-lg md:text-xl max-w-xl">Tu conexión con el futuro de las compras digitales.</p>
       </section>
-
+      {/* DIVISOR */}
+      <div className="relative w-full h-32 flex items-center justify-center overflow-hidden z-10">
+        <div className="absolute top-1/2 w-full h-[2px] bg-gradient-to-r from-cyan-500 via-white to-cyan-500 animate-glowline" />
+        <div className="absolute w-3 h-3 bg-cyan-400 rounded-full animate-pulse" />
+      </div>
       <ProductosSection />
-
+      {/* DIVISOR */}
+      <div className="relative w-full h-32 flex items-center justify-center overflow-hidden z-10">
+        <div className="absolute top-1/2 w-full h-[2px] bg-gradient-to-r from-cyan-500 via-white to-cyan-500 animate-glowline" />
+        <div className="absolute w-3 h-3 bg-cyan-400 rounded-full animate-pulse" />
+      </div>
       <section id="sobre-market" className="relative z-10 py-24 px-6 bg-black text-center md:text-left">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
           <motion.div
