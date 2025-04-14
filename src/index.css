@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-md-dark text-white min-h-screen;
+      background-color: black;
+      overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-md-dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-md-blue-dark rounded-full hover:bg-md-blue-light transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-md-blue-dark hover:bg-md-blue-light text-white font-bold py-2 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-md-blue-light/20;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply bg-md-dark/50 border border-md-blue-light/20 rounded-xl p-6 hover:border-md-blue-light/40 transition-all duration-300 hover:shadow-lg hover:shadow-md-blue-light/10;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Glass effect for cards */
+.glass-effect {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Gradient animation */
+.gradient-animate {
+  background: linear-gradient(90deg, #2b78b0, #7ab3d8, #c1dbe6);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+html, body {
+  height: 100%;
+  background-color: #000;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style {
+  transform-style: preserve-3d;
+}
+
+.neon-glow {
+  text-shadow: 0 0 6px #0ff, 0 0 12px #0ff, 0 0 20px #0ff;
+}
+
+.hover\:glow-soft:hover {
+  text-shadow: 0 0 4px #7ab3d8;
+}
+.text-md-blue-light {
+  color: #7ab3d8;
+}
+.text-md-blue-pastel {
+  color: #cbe8ff;
+}
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  padding-top: 1rem;
+}
+
+.curved-header {
+  perspective: 1000px;
+  margin-top: 2rem;
+}
+
+.nav-curve {
+  transform-style: preserve-3d;
+  transform: rotateX(15deg);
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1rem 0;
+}
+
+.nav-item {
+  color: #cbe8ff;
+  font-weight: bold;
+  transition: transform 0.3s ease, color 0.3s;
+}
+
+.nav-item:hover {
+  transform: scale(1.15);
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.nav-item.active {
+  color: #00ffff;
+  text-shadow: 0 0 12px #00ffff;
+}
+
+@keyframes glowline {
+  0% { transform: scaleX(0); opacity: 0.2; }
+  50% { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(0); opacity: 0.2; }
+}
+.animate-glowline {
+  animation: glowline 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.animate-glowline {
+  animation: glowline 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.header-glow {
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+  position: relative;
+}
+
+.header-glow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: cyan;
+  box-shadow: 0 0 8px cyan, 0 0 12px cyan;
+  border-radius: 50%;
+  animation: glowPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateX(-50%) scaleX(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+@media (max-width: 640px) {
+  header nav a {
+    font-weight: 500;
+    padding-bottom: 2px;
+  }
+}
